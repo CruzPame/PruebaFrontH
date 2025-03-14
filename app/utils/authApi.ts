@@ -15,7 +15,7 @@ export async function loginRequest(correo: string, contrasena: string) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ correo, contrasena }),
-      mode: "cors",
+ 
     });
 
     const data = await response.json();
