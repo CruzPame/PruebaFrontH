@@ -1,13 +1,10 @@
 {
   "functions": {
     "server.js": {
-      "runtime": "nodejs20.x"
+      "runtime": "nodejs20"
     }
   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
+    { "src": "/(.*)", "dest": "/server.js" }
   ]
 }
