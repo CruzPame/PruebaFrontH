@@ -1,7 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 
 
-//const API_URL = "http://saraitga-001-site1.ntempurl.com/api";// Define solo una vez en el archivo
 const API_URL = import.meta.env.VITE_API_URL;
 console.log("API_URL:", API_URL);
 
@@ -15,7 +14,7 @@ interface DecodedToken {
 
 export async function loginRequest(correo: string, contrasena: string) {
   try {
-    const response = await fetch(`${API_URL}/auth/login`, {
+    const response = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ correo, contrasena }),
@@ -45,7 +44,7 @@ export async function loginRequest(correo: string, contrasena: string) {
 
 export async function forgotPasswordRequest(email: string) {
   try {
-    const response = await fetch(`${API_URL}/password/forgot`, {
+    const response = await fetch(`${API_URL}/api/password/forgot`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ correo: email }), // 
@@ -67,7 +66,7 @@ export async function forgotPasswordRequest(email: string) {
 
 export async function resetPasswordRequest(TokenRecuperacion: string, NuevaContrasena: string, ConfirmarContrasena: string) {
   try {
-    const response = await fetch(`${API_URL}/password/reset`, {
+    const response = await fetch(`${API_URL}/api/password/reset`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ TokenRecuperacion, NuevaContrasena, ConfirmarContrasena }), // Enviar el token y las contraseñas
