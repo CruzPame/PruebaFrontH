@@ -1,15 +1,13 @@
 {
-    "version"; 2,
-    "builds"; [
-      {
-        "src": "package.json",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes"; [
-      {
-        "src": "/(.*)",
-        "dest": "/index.js"
-      }
-    ]
-  }
+  "functions"; {
+    "build/server/index.js"; {
+      "runtime"; "nodejs20.x"
+    }
+  };
+  "routes"; [
+    {
+      "src": "/(.*)",
+      "dest": "build/server/index.js"
+    }
+  ]
+}
