@@ -3,7 +3,7 @@ dotenv.config();
 
 /** @type {import('@remix-run/dev').AppConfig} */
 export default {
-  ignoredRouteFiles: ["*/."],
+  ignoredRouteFiles: ["**/."],
   serverBuildTarget: "vercel",
-  server: "./server.js",
+  serverModule: "./server.js", // Indica que usará SSR
 };
