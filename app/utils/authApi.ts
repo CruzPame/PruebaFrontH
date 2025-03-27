@@ -1,6 +1,8 @@
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = "http://saraitga-001-site1.ntempurl.com/api";// Define solo una vez en el archivo
+//const API_URL = "http://saraitga-001-site1.ntempurl.com/api";// Define solo una vez en el archivo
+const API_URL = import.meta.env.NEXT_PUBLIC_API_URL;
+
 
 interface DecodedToken {
   IdUsuario: string;
